@@ -1,36 +1,14 @@
-import React, { useState, useEffect } from "react";
-import getProducts from "../api/getProducts";
+import React from "react";
 import "./estilos.css";
 
-const Products = () => {
-  const [product, setProduct] = useState("");
-
-  const updateProducts = () => {
-    getProducts().then((newProduct) => {
-      setProduct(newProduct);
-    });
-  };
-  useEffect(() => {
-    updateProducts();
-  }, []);
+const Products = ({ item }) => {
+  const { title, image, price } = item;
   return (
-    <>
-      {!product ? (
-        <div className="products_loader">
-          <h3>Cargando...</h3>
-        </div>
-      ) : (
-        product.map((product, index) => {
-          return (
-              <div className="product">
-                <img className="img-product" src={product.image} alt="" />
-                <p>{product.title}</p>
-                <label className="label_product">${product.price}</label>
-              </div>
-          );
-        })
-      )}
-    </>
+    <div className="product">
+      <img className="img-product" src={image} alt="" />
+      <p>{title}</p>
+      <label className="label_product">${price}</label>
+    </div>
   );
 };
 
