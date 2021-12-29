@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import getProducts from "../api/getProducts";
-import "./estilos.css";
+import getProducts from "../../api/getProducts";
+import "../estilos.css";
 import Products from "./Products";
 
 const ListProducts = () => {
@@ -26,7 +26,6 @@ const ListProducts = () => {
           return <Products key={index} item={product} />;
         })
       )}
-      ;
     </div>
   );
 };

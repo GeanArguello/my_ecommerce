@@ -1,25 +1,18 @@
 import React from "react";
 
-const styleNav = {
-  position: "fixed",
-  width: "100%",
-  height: "10vh",
-  textAlign: "center",
-  margin: "0",
-  backgroundColor: "black",
-  color: "white",
-  zIndex: "100",
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: '30px'
-};
+import './estilos.css'
+import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
+
+
 
 export const Nav = () => {
   return (
     <>
-      <nav style={styleNav}>
-        <p>Catálogo</p>
+      <nav className='header_nav'>
+        <div className="header_logo">
+          <h3>Catálogo</h3>
+        </div>
+        <ShoppingCart />
       </nav>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import ListProducts from "./components/ListProducts";
+import ListProducts from "./components/Products/ListProducts";
 import { Nav } from "./components/Nav";
 
 function App() {
