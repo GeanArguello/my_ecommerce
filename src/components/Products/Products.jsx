@@ -1,11 +1,11 @@
 import React from "react";
 import "../estilos.css";
 import { db } from "../../app/db/db";
-
+import {Link} from "react-router-dom"
 const Products = ({ item }) => {
-  const { title, image, price } = item;
+  const { title, image, price, id} = item;
 
-  const addProductCart = ({title, price, category}) => {
+  const addProductCart = ({title, price, category,}) => {
     db.cart.add({
       title: title,
       price: price,
@@ -19,7 +19,7 @@ const Products = ({ item }) => {
         <p>{title}</p>
         <label className="label_product">${price}</label>
         <div>
-          <button className="button_product">Ver mas detalles</button>
+          <button className="button_product"><Link to={`/product/${id}`}>Ver mas detalles</Link> </button>
           <button 
           className="button_product"
           onClick={() => addProductCart(item) }>
